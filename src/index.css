@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-syne: 'Syne', 'sans-serif';
+  --font-satoshi: 'Satoshi', 'sans-serif';
+}
+
+/* Fonts */
+@font-face {
+  font-family: 'SyneLocal';
+  src: url('/Syne-Regular-BF642e31d3934f5.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Custom styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Syne', 'SyneLocal', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Animations */
+@keyframes slide-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-slide-horizontal {
+  animation: slide-horizontal 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-marquee-reverse {
+  animation: marquee-reverse 25s linear infinite;
+}
+
+@keyframes music-bar-1 { 0%,100%{height:4px} 50%{height:20px} }
+@keyframes music-bar-2 { 0%,100%{height:8px} 50%{height:28px} }
+@keyframes music-bar-3 { 0%,100%{height:12px} 50%{height:24px} }
+
+.animate-music-bar-1 { animation: music-bar-1 0.6s ease-in-out infinite; }
+.animate-music-bar-2 { animation: music-bar-2 0.7s ease-in-out infinite; }
+.animate-music-bar-3 { animation: music-bar-3 0.5s ease-in-out infinite; }
+
+/* Pause animations on hover */
+.hover-pause:hover {
+  animation-play-state: paused !important;
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera, Firefox and Edge */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
